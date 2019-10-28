@@ -11,9 +11,7 @@
 - (PermissionStatus)checkPermissionStatus:(PermissionGroup)permission {
     if (permission == PermissionGroupCamera) {
         return [AudioVideoPermissionStrategy permissionStatus:AVMediaTypeVideo];
-    } else if (permission == PermissionGroupMicrophone) {
-        return [AudioVideoPermissionStrategy permissionStatus:AVMediaTypeAudio];
-    }
+    } 
     return PermissionStatusUnknown;
 }
 
@@ -33,8 +31,6 @@
 
     if (permission == PermissionGroupCamera) {
         mediaType = AVMediaTypeVideo;
-    } else if (permission == PermissionGroupMicrophone) {
-        mediaType = AVMediaTypeAudio;
     } else {
         completionHandler(PermissionStatusUnknown);
         return;
